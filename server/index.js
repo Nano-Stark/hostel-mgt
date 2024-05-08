@@ -3,6 +3,7 @@ import userRoutes from "./routes/userRoutes.js";
 import studentRoutes from "./routes/studentRoutes.js";
 import attendanceRoutes from "./routes/attendanceRoutes.js";
 import morgan from "morgan";
+import cors from "cors"
 
 import dotenv from "dotenv";
 import connectDB from "./config/mongoDBConfig.js";
