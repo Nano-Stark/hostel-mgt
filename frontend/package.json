@@ -2,6 +2,9 @@
   "name": "hostel-app",
   "version": "0.1.0",
   "proxy": "http://127.0.0.1:5000",
+  "engines": {
+    "node": "16.x"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
