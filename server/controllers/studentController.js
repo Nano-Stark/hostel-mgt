@@ -141,7 +141,7 @@ const getStudentByRoomNo = asyncHandler(async (req, res) => {
     roomNo: { $in: [req.params.roomId] },
   });
   const students = await Student.find({ roomNo: req.params.roomId });
-  if (students) {
+  if (students.length > 0) {
     attendance
       ? res.json({ students: students, attendance: attendance })
       : res.json({ students: students });
