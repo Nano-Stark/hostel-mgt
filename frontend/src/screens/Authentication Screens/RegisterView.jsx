@@ -86,7 +86,7 @@ const RegisterView = ({ location, history }) => {
 
         <Form.Group controlId="role">
           <Form.Label>Role</Form.Label>
-          <div>
+          <div className="flex gap-x-4">
             <Form.Check
               type="radio"
               id="user"
