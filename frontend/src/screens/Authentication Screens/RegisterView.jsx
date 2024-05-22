@@ -11,6 +11,7 @@ const RegisterView = ({ location, history }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState(null);
 
@@ -32,7 +33,7 @@ const RegisterView = ({ location, history }) => {
     if (password !== confirmPassword) {
       setMessage("Passwords do not match");
     } else {
-      dispatch(register(name, email, password));
+      dispatch(register(name, email, password, isAdmin));
     }
   };
 
@@ -81,6 +82,26 @@ const RegisterView = ({ location, history }) => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
+        </Form.Group>
+
+        <Form.Group controlId="role">
+          <Form.Label>Role</Form.Label>
+          <div>
+            <Form.Check
+              type="radio"
+              id="user"
+              label="User"
+              checked={!isAdmin}
+              onChange={() => setIsAdmin(false)} // Set isAdmin to false when User is selected
+            />
+            <Form.Check
+              type="radio"
+              id="admin"
+              label="Admin"
+              checked={isAdmin}
+              onChange={() => setIsAdmin(true)} // Set isAdmin to true when Admin is selected
+            />
+          </div>
         </Form.Group>
 
         <Button type="submit" variant="primary">
